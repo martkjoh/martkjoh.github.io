@@ -1,0 +1,99 @@
+body {
+    margin: 10px auto 40px;
+    max-width: 800px;
+    line-height: 1.6;
+    font-size: 18px;
+    padding: 0 10px;
+}
+
+/* Justified text with hyphenation, like LaTeX */
+p {
+    text-align: justify;
+    hyphens: auto;
+}
+
+h1, h2, h3 {
+    line-height: 1.2;
+}
+
+a {
+    color: rgb(64, 117, 170);
+}
+
+/* Line under the name. overflow:hidden makes it stop where the pictures begin. */
+header .name {
+    display: block;
+    overflow: hidden;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 10px;
+}
+
+header img {
+    display: block;
+    float: right;
+    margin: 8px 0 0 8px;
+    padding: 4px;
+    width: 120px;
+}
+
+/* Tabs */
+nav {
+    clear: both;
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 1.5em;
+}
+
+nav a {
+    display: inline-block;
+    padding: 6px 14px;
+    text-decoration: none;
+    border: 1px solid transparent;
+    border-bottom: none;
+    border-radius: 4px 4px 0 0;
+    margin-bottom: -1px;
+}
+
+nav a:hover {
+    background: #f2f2f2;
+}
+
+nav a.active {
+    color: inherit;
+    background: white;
+    border-color: #ccc;
+}
+
+/* Research directions (research/*.html) */
+.direction {
+    margin-bottom: 2em;
+}
+
+/* Make each direction end below its picture, so the next one starts cleanly */
+.direction::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.direction img {
+    float: right;
+    width: 240px;
+    max-width: 40%;
+    margin: 0 0 10px 20px;
+}
+
+/* Use <img class="left" ...> to put the picture on the left instead */
+.direction img.left {
+    float: left;
+    margin: 0 20px 10px 0;
+}
+
+.direction p {
+    line-height: 1.35;
+}
+
+/* Publication list (publications.html) */
+.publications li {
+    margin-bottom: 1em;
+    line-height: 1.35;
+}
