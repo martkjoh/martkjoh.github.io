@@ -46,6 +46,9 @@ def fetch_works():
                 "type": w.get("type", ""),
                 "journal": text(w, "journal-title", "value"),
                 "year": text(w, "publication-date", "year", "value"),
+                # Full date as "YYYY-MM-DD" (missing parts become 00), used for sorting
+                "date": "-".join(text(w, "publication-date", part, "value") or "00"
+                                 for part in ("year", "month", "day")),
                 "url": text(w, "url", "value") or (f"https://doi.org/{doi}" if doi else ""),
                 "authors": [text(c, "credit-name", "value")
                             for c in text(w, "contributors", "contributor") or []],
@@ -72,7 +75,7 @@ def render(work):
 
 
 def main():
-    works = sorted(fetch_works(), key=lambda w: w["year"], reverse=True)
+    works = sorted(fetch_works(), key=lambda w: w["date"], reverse=True)
     articles = [w for w in works if w["type"] == "journal-article"]
     published = {norm(w["title"]) for w in articles}
     # Hide preprints that have since been published under the same title
