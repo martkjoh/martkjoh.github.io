@@ -14,7 +14,7 @@ from pathlib import Path
 
 ORCID_ID = "0000-0001-8460-7149"
 MY_NAME = "Martin Kjøllesdal Johnsrud"  # shown in bold in author lists
-PAGE = Path(__file__).resolve().parent.parent / "publications.html"
+PAGE = Path(__file__).resolve().parent.parent / "pages" / "publications.html"
 API = f"https://pub.orcid.org/v3.0/{ORCID_ID}"
 
 

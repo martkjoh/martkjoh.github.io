@@ -2,30 +2,45 @@
 <html lang="en">
 <!-- Head: page title, styles and icon for the browser. Not shown on the page. -->
 <head>
+    <!-- HEAD START: copied from scripts/head.html by scripts/update_header.py, edits here are overwritten -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/style.css">
+    <link rel="icon" href="/media/favicon.png?v=2">
+    <!-- KaTeX: renders LaTeX, $...$ inline and $$...$$ displayed -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+    <script>
+        window.katexOptions = { delimiters: [
+            { left: '$$', right: '$$', display: true },
+            { left: '$', right: '$', display: false }
+        ] };
+    </script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"
+        onload="renderMathInElement(document.body, katexOptions)"></script>
+    <!-- HEAD END -->
     <title>Martin Kjøllesdal Johnsrud</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="icon" href="media/favicon.png?v=2">
 </head>
 
 <body>
 
     <!-- Header: menu, photo and name, shared by all pages -->
+    <!-- HEADER START: copied from scripts/header.html by scripts/update_header.py, edits here are overwritten -->
     <header>
         <nav>
-            <a href="index.html" class="active">Home</a>
-            <a href="research.html">Research</a>
-            <a href="publications.html">Publications</a>
-            <a href="teaching.html">Teaching</a>
+            <a href="/" class="active">Home</a>
+            <a href="/pages/research.html">Research</a>
+            <a href="/pages/publications.html">Publications</a>
+            <a href="/pages/teaching.html">Teaching</a>
         </nav>
         <h1>
-        <img src="media/mkjohnsrud.jpeg" alt="Martin Kjøllesdal Johnsrud">
-        <a href="https://orcid.org/0000-0001-8460-7149"><img src="media/ORCID_iD.png" alt="ORCID" style="width:40px"></a>
-        <a href="https://bsky.app/profile/martinjohnsrud.bsky.social"><img src="media/Bluesky.png" alt="Bluesky" style="width:45px"></a>
+        <img src="/media/mkjohnsrud.jpeg" alt="Martin Kjøllesdal Johnsrud">
+        <a href="https://orcid.org/0000-0001-8460-7149"><img src="/media/ORCID_iD.png" alt="ORCID" style="width:40px"></a>
+        <a href="https://bsky.app/profile/martinjohnsrud.bsky.social"><img src="/media/Bluesky.png" alt="Bluesky" style="width:45px"></a>
         <span class="name">Martin Kjøllesdal Johnsrud</span>
         </h1>
     </header>
+    <!-- HEADER END -->
 
     <section class="home">
         <p>
