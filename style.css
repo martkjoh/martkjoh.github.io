@@ -111,3 +111,13 @@ nav a.active {
     margin-bottom: 1em;
     line-height: 1.2;
 }
+
+/* Phones: everything about 10% smaller */
+@media (max-width: 600px) {
+    body {
+        font-size: 16px;
+    }
+    header h1 > img {
+        width: 108px;
+    }
+}
