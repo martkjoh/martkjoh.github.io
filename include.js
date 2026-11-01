@@ -6,6 +6,11 @@ document.querySelectorAll('[data-include]').forEach(async (el) => {
         const res = await fetch(url);
         if (!res.ok) throw new Error(res.status);
         el.innerHTML = await res.text();
+        // Render LaTeX in the new content. If MathJax hasn't loaded yet,
+        // its first pass over the page will pick this up anyway.
+        if (window.MathJax && MathJax.typesetPromise) {
+            MathJax.startup.promise.then(() => MathJax.typesetPromise([el]));
+        }
     } catch (err) {
         el.textContent = 'Could not load ' + el.dataset.include;
     }
