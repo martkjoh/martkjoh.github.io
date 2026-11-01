@@ -115,7 +115,7 @@ nav a.active {
 /* Phones: everything about 10% smaller */
 @media (max-width: 600px) {
     body {
-        font-size: 16px;
+        font-size: 15px;
     }
     header h1 > img {
         width: 108px;
